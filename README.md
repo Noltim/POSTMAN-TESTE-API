@@ -109,9 +109,94 @@ PS: a pasta teste é baixada deste repositorio.
 
 - newman run ServeRest.postman_collection.json -e Local.postman_environment.json -n 4 -r htmlextra
 
+# Testes - Postman
+
+Este repositório contém exemplos de diferentes tipos de testes que podem ser realizados no Postman. Os testes incluem: Testes de Funcionalidade, Integração, Regressão, Performance, Segurança, Aceitação e Contrato.
+
+## Índice
+- [Testes de Funcionalidade](#testes-de-funcionalidade)
+- [Testes de Integração](#testes-de-integração)
+- [Testes de Regressão](#testes-de-regressão)
+- [Testes de Performance e Carga](#testes-de-performance-e-carga)
+- [Testes de Segurança](#testes-de-segurança)
+- [Testes de Aceitação](#testes-de-aceitação)
+- [Testes de Contrato](#testes-de-contrato)
+
+### Exemplos
+
+
+```javascript
+// Teste de sucesso para uma requisição GET
+pm.test("Successful GET request", function () {
+    pm.expect(pm.response.code).to.be.oneOf([200]);
+});
+
+// Verifica se o status da resposta é 200
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+// Verifica se o nome do status da resposta é "OK"
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("OK");
+});
+
+// Verifica se o tempo de resposta é menor que 1000ms
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(1000);
+});
+
+// Verifica se a resposta é válida, possui um corpo e está no formato JSON
+pm.test("response must be valid and have a body", function () {
+     pm.response.to.be.ok;
+     pm.response.to.be.withBody;
+     pm.response.to.be.json;
+});
+
+// Verifica se a resposta contém atributos específicos
+const atributos = ['quantidade', 'usuarios'];
+atributos.forEach((atributo) => {
+    pm.test(`Resposta contém atributo "${atributo}"`, () => {
+        pm.expect(pm.response.json()[atributo]).to.exist;
+    });
+});
+
+// Define um esquema JSON para validar a resposta
+var schema = {
+  "type": "object",
+  "properties": {
+    "quantidade": {
+      "type": "integer"
+    },
+    "usuarios": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "nome": { "type": "string" },
+            "email": { "type": "string" },
+            "password": { "type": "string" },
+            "administrador": { "type": "string" },
+            "_id": { "type": "string" }
+          },
+          "required": ["nome", "email", "password", "administrador", "_id"]
+        }
+      ]
+    }
+  },
+  "required": ["quantidade", "usuarios"]
+};
+
+// Valida o esquema da resposta
+pm.test("Validating schema", () => {
+    pm.response.to.have.jsonSchema(schema);
+});
+````
+
 # Considerações Finais
 
-Durante todo a trilha foi possivel um vislumbre de todo o andamento desse mundo tão vasto chamados de testes. Ser um analista QA não é facil requer muito estudo e dedicação, assim como atenção e cuidado. Agradeço muito aos meus companheiros que ajudaram a todo momento na criação de todos os testes, assim como a Alexandre por auxiliar na criação desse readme e principalmente no auxilio da criação dos metodos de exclusão.
+Durante todo a trilha foi possivel um vislumbre de todo o andamento desse mundo tão vasto chamados de testes. Ser um analista QA não é facil requer muito estudo e dedicação, assim como atenção e cuidado. Agradeço muito aos meus companheiros que ajudaram a todo momento na criação de todos os testes.
 
 ## Autor
 
