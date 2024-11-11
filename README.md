@@ -198,6 +198,10 @@ pm.test("Validating schema", () => {
 
 Durante todo a trilha foi possivel um vislumbre de todo o andamento desse mundo tão vasto chamados de testes. Ser um analista QA não é facil requer muito estudo e dedicação, assim como atenção e cuidado. Agradeço muito aos meus companheiros que ajudaram a todo momento na criação de todos os testes.
 
-## Autor
+## Autores
 
-José Milton de Oliveira Neto
+José Milton de Oliveira Neto - 11035714
+Dielder Leal                 - 01461719
+Jailton Júnior               - 01225496
+Leonardo Emanuel             - 01418337
+Lucas Crespo                 - 01419654
