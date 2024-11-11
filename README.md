@@ -200,8 +200,8 @@ Durante todo a trilha foi possivel um vislumbre de todo o andamento desse mundo 
 
 ## Autores
 
-José Milton de Oliveira Neto - 11035714
-Dielder Leal                 - 01461719
-Jailton Júnior               - 01225496
-Leonardo Emanuel             - 01418337
-Lucas Crespo                 - 01419654
+- José Milton de Oliveira Neto - 11035714
+- Dielder Leal                 - 01461719
+- Jailton Júnior               - 01225496
+- Leonardo Emanuel             - 01418337
+- Lucas Crespo                 - 01419654
